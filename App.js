@@ -1,41 +1,43 @@
-import React from "react";
-import { useFonts } from "@use-expo/font";
-import { StyleSheet } from "react-native";
+import React, { useState } from "react";
 import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import { AppLoading } from "expo";
+import * as Font from "expo-font";
 
 import productsReducer from "./store/reducers/products";
+import cartReducer from "./store/reducers/cart";
 import ShopNavigator from "./navigation/ShopNavigator";
 
 const rootReducer = combineReducers({
   products: productsReducer,
+  cart: cartReducer,
 });
 
 const store = createStore(rootReducer);
 
-export default function App() {
-  let [fontsLoaded] = useFonts({
+const fetchFonts = () => {
+  return Font.loadAsync({
     "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
   });
+};
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  } else {
+export default function App() {
+  const [fontLoaded, setFontLoaded] = useState(false);
+
+  if (!fontLoaded) {
     return (
-      <Provider store={store}>
-        <ShopNavigator />
-      </Provider>
+      <AppLoading
+        startAsync={fetchFonts}
+        onFinish={() => {
+          setFontLoaded(true);
+        }}
+      />
     );
   }
+  return (
+    <Provider store={store}>
+      <ShopNavigator />
+    </Provider>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
