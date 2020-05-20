@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, useReducer, useCallback } from 'react';
+=======
+import React from 'react';
+>>>>>>> old-state
 import {
   ScrollView,
   View,
@@ -9,39 +13,13 @@ import {
   Alert
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useDispatch } from 'react-redux';
 
 import Input from '../../components/UI/Input';
 import Card from '../../components/UI/Card';
 import Colors from '../../constants/Colors';
-import * as authActions from '../../store/actions/auth';
-
-const FORM_INPUT_UPDATE = 'FORM_INPUT_UPDATE';
-
-const formReducer = (state, action) => {
-  if (action.type === FORM_INPUT_UPDATE) {
-    const updatedValues = {
-      ...state.inputValues,
-      [action.input]: action.value
-    };
-    const updatedValidities = {
-      ...state.inputValidities,
-      [action.input]: action.isValid
-    };
-    let updatedFormIsValid = true;
-    for (const key in updatedValidities) {
-      updatedFormIsValid = updatedFormIsValid && updatedValidities[key];
-    }
-    return {
-      formIsValid: updatedFormIsValid,
-      inputValidities: updatedValidities,
-      inputValues: updatedValues
-    };
-  }
-  return state;
-};
 
 const AuthScreen = props => {
+<<<<<<< HEAD
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
   const [isSignup, setIsSignup] = useState(false);
@@ -100,6 +78,8 @@ const AuthScreen = props => {
     [dispatchFormState]
   );
 
+=======
+>>>>>>> old-state
   return (
     <KeyboardAvoidingView
       behavior="padding"
@@ -116,8 +96,8 @@ const AuthScreen = props => {
               required
               email
               autoCapitalize="none"
-              errorText="Please enter a valid email address."
-              onInputChange={inputChangeHandler}
+              errorMessage="Please enter a valid email address."
+              onInputChange={() => {}}
               initialValue=""
             />
             <Input
@@ -128,11 +108,12 @@ const AuthScreen = props => {
               required
               minLength={5}
               autoCapitalize="none"
-              errorText="Please enter a valid password."
-              onInputChange={inputChangeHandler}
+              errorMessage="Please enter a valid password."
+              onInputChange={() => {}}
               initialValue=""
             />
             <View style={styles.buttonContainer}>
+<<<<<<< HEAD
               {isLoading ? (
                 <ActivityIndicator size="small" color={Colors.primary} />
               ) : (
@@ -142,6 +123,9 @@ const AuthScreen = props => {
                   onPress={authHandler}
                 />
               )}
+=======
+              <Button title="Login" color={Colors.primary} onPress={() => {}} />
+>>>>>>> old-state
             </View>
             <View style={styles.buttonContainer}>
               <Button

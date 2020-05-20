@@ -1,4 +1,4 @@
-# bugi
+# shop-app
 A mini mobile shopping application built with React Native and Expo tool.
 
 
