@@ -36,7 +36,7 @@ Cart Page
 !["Cartpage"](https://github.com/Hayder-Suwaed/shop_app/blob/master/public/images/IMG_2558.PNG)
 
 Orders page
-!["Orders page"](https://github.com/Hayder-Suwaed/shop_app/blob/master/public/images/IMG_2559.PNG)
+!["Orders page"](https://github.com/Hayder-Suwaed/shop_app/blob/master/public/images/IMG_2560.PNG)
 
 Admin page
 !["Admin page"](https://github.com/Hayder-Suwaed/shop_app/blob/master/public/images/IMG_2561.PNG)
