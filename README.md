@@ -26,6 +26,20 @@ USERNAME=your_username_here
 PASSWORD=your_password_here
 ```
 
+## Final Product
+
+
+All products page
+!["All products page"](https://github.com/Hayder-Suwaed/shop_app/blob/master/public/images/IMG_2557.PNG)
+
+Cart Page
+!["Cartpage"](https://github.com/Hayder-Suwaed/shop_app/blob/master/public/images/IMG_2558.PNG)
+
+Orders page
+!["Orders page"](https://github.com/Hayder-Suwaed/shop_app/blob/master/public/images/IMG_2559.PNG)
+
+Admin page
+!["Admin page"](https://github.com/Hayder-Suwaed/shop_app/blob/master/public/images/IMG_2561.PNG)
 
 
 ## Dependec
