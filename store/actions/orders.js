@@ -7,7 +7,7 @@ export const fetchOrders = () => {
   return async (dispatch) => {
     try {
       const response = await fetch(
-        "https://shop-app-9f7f2.firebaseio.com/orders/u1.json"
+        'https://shop-app-9f7f2.firebaseio.com/orders/u1.json'
       );
 
       if (!response.ok) {
@@ -38,7 +38,7 @@ export const addOrder = (cartItems, totalAmount) => {
   return async (dispatch) => {
     const date = new Date();
     const response = await fetch(
-      "https://shop-app-9f7f2.firebaseio.com/orders/u1.json",
+      'https://shop-app-9f7f2.firebaseio.com/orders/u1.json',
       {
         method: "POST",
         headers: {
