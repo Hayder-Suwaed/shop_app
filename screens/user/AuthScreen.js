@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useCallback } from 'react';
+import React, { useReducer, useCallback } from 'react';
 import {
   ScrollView,
   View,
@@ -40,7 +40,6 @@ const formReducer = (state, action) => {
 };
 
 const AuthScreen = props => {
-  const [isSignup, setIsSignup] = useState(false);
   const dispatch = useDispatch();
 
   const [formState, dispatchFormState] = useReducer(formReducer, {
@@ -55,20 +54,13 @@ const AuthScreen = props => {
     formIsValid: false
   });
 
-  const authHandler = () => {
-    let action;
-    if (isSignup) {
-      action = authActions.signup(
+  const signupHandler = () => {
+    dispatch(
+      authActions.signup(
         formState.inputValues.email,
         formState.inputValues.password
-      );
-    } else {
-      action = authActions.login(
-        formState.inputValues.email,
-        formState.inputValues.password
-      );
-    }
-    dispatch(action);
+      )
+    );
   };
 
   const inputChangeHandler = useCallback(
@@ -117,9 +109,9 @@ const AuthScreen = props => {
             />
             <View style={styles.buttonContainer}>
               <Button
-                title={isSignup ? 'Sign Up' : 'Login'}
+                title="Login"
                 color={Colors.primary}
-                onPress={authHandler}
+                onPress={signupHandler}
               />
             </View>
             <View style={styles.buttonContainer}>
